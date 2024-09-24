@@ -8,16 +8,31 @@ def home():
     return render_template('index.html')
 
 
+@app.route('/lotInfo')
+def lot():
+    return render_template('lot.html')
 
-@app.route('/api/activeLots', methods=['GET'])
-def activeLots():
+
+@app.route('/profile')
+def profile():
+    return render_template('profile.html')
+
+
+@app.route('/api/register', methods=['GET'])
+def register():
     pass
 
-@app.route('/api/createLots', methods=['POST'])
+@app.route('/api/login', methods=['GET'])
+def login():
+    pass
+
+@app.route('/api/createLots', methods=['GET'])
 def createLots():
     pass
 
-
+@app.route('/api/getLots', methods=['POST'])
+def getLots():
+    pass
 
 if __name__ == '__main__':
     app.run('0.0.0.0')

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профиль</title>
+    <link rel="stylesheet" href="/static/styles/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>Профиль пользователя</h1>
+    <button onclick="window.location.href='/'">На главную</button>
+</header>
+
+<div class="profile-container">
+    <div class="tabs">
+        <ul class="tab-list">
+            <li class="tab-button active" onclick="openTab(event, 'account-info')">Аккаунт и внешний вид</li>
+            <li class="tab-button" onclick="openTab(event, 'password-change')">Безопасность</li>
+            <li class="tab-button" onclick="openTab(event, 'lot-history')">История лотов</li>
+            <li class="tab-button" onclick="openTab(event, 'new-lot')">Создать лот</li>
+        </ul>
+    </div>
+
+    <div class="tab-content-container">
+        <div id="account-info" class="tab-content active">
+            <h2>Добро пожаловать, <span id="profile-nickname">User</span></h2>
+            <p><strong>Баланс:</strong> <span id="profile-balance">0 Р</span></p>
+        </div>
+
+        <div id="password-change" class="tab-content">
+            <h3>Смена пароля</h3>
+            <input type="password" id="new-password" placeholder="Новый пароль">
+            <button onclick="changePassword()">Изменить пароль</button>
+        </div>
+
+        <div id="lot-history" class="tab-content">
+            <h3>История лотов</h3>
+            <h4>Купленные лоты:</h4>
+            <ul id="bought-lots">
+                <li>Лот: Советское фото Винтаж (10 Р)</li>
+            </ul>
+
+            <h4>Проданные лоты:</h4>
+            <ul id="sold-lots">
+                <li>Лот: Советское фото Татары (15 Р)</li>
+            </ul>
+        </div>
+
+        <div id="new-lot" class="tab-content">
+            <h3>Создать новый лот</h3>
+            <input type="text" id="new-lot-title" placeholder="Название лота">
+            <textarea id="new-lot-description" placeholder="Описание"></textarea>
+            <input type="number" id="new-lot-price" placeholder="Начальная цена">
+            <input type="number" id="new-lot-step" placeholder="Шаг цены">
+            <input type="file" id="images" name="images" multiple accept="image/*" required />
+            <button onclick="createLot()">Создать лот</button>
+        </div>
+    </div>
+</div>
+
+<script src="/static/scripts/profile.js"></script>
+</body>
+</html>

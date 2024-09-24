@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Детали Лота</title>
+    <link rel="stylesheet" href="/static/styles/lot-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Лот: Советское фото Винтаж</h1>
+        <button onclick="window.location.href='/'">Назад к лотам</button>
+    </header>
+
+    <!-- Основная информация о лоте -->
+    <div class="lot-container">
+        <div class="lot-image-gallery">
+            <img src="lot1.jpg" alt="Советское фото Винтаж" id="main-image">
+            <div class="thumbnail-gallery">
+                <img src="lot1.jpg" alt="Миниатюра 1" class="thumbnail" onclick="changeImage('lot1.jpg')">
+                <img src="lot2.jpg" alt="Миниатюра 2" class="thumbnail" onclick="changeImage('lot2.jpg')">
+                <img src="lot3.jpg" alt="Миниатюра 3" class="thumbnail" onclick="changeImage('lot3.jpg')">
+                <img src="lot4.jpg" alt="Миниатюра 4" class="thumbnail" onclick="changeImage('lot4.jpg')">
+            </div>
+        </div>
+
+        <div class="lot-details">
+            <h2>Советское фото Винтаж Бюст Сталина Заседание</h2>
+            <p class="lot-description">Историческое фото, изображающее заседание с участием Сталина. Редкий экземпляр, коллекционное издание.</p>
+            <div class="price-info">
+                <p><strong>Начальная цена:</strong> 3 Р</p>
+                <p><strong>Текущая цена:</strong> 10 Р</p>
+                <p><strong>Шаг цены:</strong> 1 Р</p>
+            </div>
+
+            <form id="bet-form">
+                <input type="number" id="bet-amount" placeholder="Введите вашу ставку">
+                <button class="submit-btn" type="button" onclick="makeBet()">Сделать ставку</button>
+            </form>
+
+            <h3>История ставок</h3>
+            <ul id="bet-history">
+                <li>Ставка: 5 Р</li>
+                <li>Ставка: 7 Р</li>
+                <li>Ставка: 10 Р</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="/static/scripts/lot-scripts.js"></script>
+</body>
+</html>

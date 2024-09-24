@@ -34,6 +34,7 @@ def addLotHistory(id_lot, status, current_price, buyer):
 
 def getLots():
     cursor.execute(f"SELECT * FROM Active_lots WHERE NOT EXISTS (SELECT * FROM Lots_history WHERE Lots_history.id_lot = Active_lots.id_lot AND Lots_history.status = 'Не завершен')")
+    return cursor.fetchall()
 
-# createUser('Stanislaw', '1234')
-# checkUser('Stanislaw', '')
+def getBuyer(id_lot):
+    cursor.execute(f"SELECT login FROM Users WHERE Bids_table.buyer = Users.user_id")
